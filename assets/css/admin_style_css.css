@@ -1,0 +1,82 @@
+/*
+ CSS for the main interaction
+*/
+.custom-tabset > input[type="radio"] {
+  position: absolute;
+  left: -200vw;
+}
+
+.custom-tabset .tab-panel {
+  display: none;
+}
+
+.custom-tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
+.custom-tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
+.custom-tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
+.custom-tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
+.custom-tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
+.custom-tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6) {
+  display: block;
+}
+
+.custom-tabset > label {
+  position: relative;
+  display: inline-block;
+  padding: 15px 15px 25px;
+  border: 1px solid transparent;
+  border-bottom: 0;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.custom-tabset > label::after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  bottom: 10px;
+  width: 22px;
+  height: 4px;
+  background: #8d8d8d;
+}
+
+input:focus-visible + label {
+  outline: 2px solid rgba(0, 102, 204, 1);
+  border-radius: 3px;
+}
+
+.custom-tabset > label:hover,
+.custom-tabset > input:focus + label,
+.custom-tabset > input:checked + label {
+  color: #06c;
+}
+
+.custom-tabset > label:hover::after,
+.custom-tabset > input:focus + label::after,
+.custom-tabset > input:checked + label::after {
+  background: #06c;
+}
+
+.custom-tabset > input:checked + label {
+  border-color: #ccc;
+  border-bottom: 1px solid #fff;
+  margin-bottom: -1px;
+}
+
+.tab-panel {
+  padding: 30px 0;
+  border-top: 1px solid #ccc;
+}
+
+/*
+ Demo purposes only
+*/
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.custom-tabset {
+  width: 100%;
+  margin-top: 5px;
+}
